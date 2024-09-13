@@ -1,0 +1,302 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
+@layer utilities {
+    /* Hide scrollbar for Chrome, Safari and Opera */
+    .no-scrollbar::-webkit-scrollbar {
+        display: none;
+    }
+    /* Hide scrollbar for IE, Edge and Firefox */
+    .no-scrollbar {
+        -ms-overflow-style: none; /* IE and Edge */
+        scrollbar-width: none; /* Firefox */
+    }
+}
+
+[x-cloak] {
+    display: none;
+}
+/* Définir les styles pour le mode clair */
+body {
+    @apply bg-white text-black font-inter;
+}
+
+/* Définir les styles pour le mode sombre */
+.dark body {
+    @apply bg-gray-900 text-white font-inter;
+}
+
+/* Surcharger les styles des boutons Filament */
+button.fi-btn,
+a.fi-btn {
+    @apply bg-primary-500 text-white !important;
+}
+
+button.fi-btn:hover,
+a.fi-btn:hover {
+    @apply bg-primary-600 !important;
+}
+
+svg {
+    width: 100%;
+}
+
+.text-2xs {
+    font-size: 0.6rem;
+}
+
+.wave {
+    animation: wave 3s linear;
+    animation-iteration-count: infinite;
+    fill: #0069ff;
+}
+
+#wave2 {
+    animation-duration: 5s;
+    animation-direction: reverse;
+    opacity: 0.6;
+}
+#wave3 {
+    animation-duration: 7s;
+    opacity: 0.3;
+}
+@keyframes drop {
+    0% {
+        transform: translateY(80%);
+        opacity: 0.6;
+    }
+    80% {
+        transform: translateY(80%);
+        opacity: 0.6;
+    }
+    90% {
+        transform: translateY(10%);
+        opacity: 0.6;
+    }
+    100% {
+        transform: translateY(0%) scale(1.5);
+        stroke-width: 0.2;
+        opacity: 0;
+    }
+}
+@keyframes wave {
+    from {
+        transform: translateX(0%);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+@keyframes typing {
+    0%,
+    75%,
+    100% {
+        transform: translate(0, 0.25rem) scale(0.9);
+        opacity: 0.5;
+    }
+
+    25% {
+        transform: translate(0, -0.25rem) scale(1);
+        opacity: 1;
+    }
+}
+
+.form-control {
+    @apply form-input w-full;
+}
+
+/****** Buttons **********/
+
+.btn {
+    @apply flex items-center justify-center gap-2 rounded-lg text-sm font-medium px-5 py-2.5 cursor-pointer;
+
+    svg {
+        @apply w-5 h-5;
+    }
+}
+
+.btn-disabled,
+.btn:disabled {
+    @apply bg-grey-500 text-grey-700 cursor-not-allowed;
+}
+
+.btn-outline-disabled {
+    @apply bg-white text-grey-700 border border-grey-700 cursor-not-allowed;
+}
+
+.btn-primary {
+    @apply bg-primary-500 text-white;
+}
+
+.btn-primary:hover {
+    @apply bg-primary-700;
+}
+
+.btn-outline-primary {
+    @apply bg-white text-primary-500 border border-primary-500;
+}
+
+.btn-outline-primary:hover {
+    @apply bg-primary-500 text-white;
+}
+
+.btn-secondary {
+    @apply bg-secondary-500 text-white;
+}
+
+.btn-secondary:hover {
+    @apply bg-secondary-700;
+}
+
+.btn-outline-secondary {
+    @apply bg-white text-secondary-500 border border-secondary-500;
+}
+
+.btn-outline-secondary:hover {
+    @apply bg-secondary-500 text-white;
+}
+
+.btn-sm {
+    @apply px-3 py-2;
+}
+
+.btn-lg {
+    @apply flex-1;
+}
+
+/****** Tabs **********/
+
+.tab {
+    @apply relative inline-flex align-middle rounded-lg shadow-sm divide-x overflow-hidden;
+}
+
+.tab-item {
+    @apply bg-grey-300 text-grey-900 p-4 rounded-none;
+}
+
+.tab-item:hover {
+    @apply bg-grey-100;
+}
+
+.tab-item.active {
+    @apply bg-white;
+}
+
+/****** Textareas **********/
+
+.textarea-container {
+    @apply flex flex-col gap-3 justify-center;
+}
+
+.textarea-container label {
+    @apply text-sm font-semibold;
+}
+
+textarea {
+    @apply text-sm p-4 border border-grey-700 rounded-lg resize-none;
+}
+
+textarea.error {
+    @apply border-secondary-500 ring-secondary-500;
+}
+
+textarea:focus {
+    @apply border-quaternary-500 ring-quaternary-500;
+}
+
+textarea:disabled {
+    @apply bg-grey-500 cursor-not-allowed;
+}
+
+/****** Checkboxes **********/
+
+.checkbox-container {
+    @apply flex items-center gap-3;
+}
+
+.checkbox-container input[type="checkbox"],
+.checkbox-container input[type="checkbox"]:hover {
+    @apply w-6 h-6 border border-grey-900 rounded text-quaternary-500 focus:ring-0 focus:outline-0 cursor-pointer;
+    background-size: 0.95em !important;
+}
+
+.checkbox-container input[type="checkbox"]:checked {
+    @apply border-quaternary-500;
+}
+
+.checkbox-container input[type="checkbox"]:disabled {
+    @apply border-grey-700 text-grey-500 bg-grey-500 cursor-not-allowed;
+}
+
+.checkbox-container input[type="checkbox"]:checked:disabled {
+    background-image: url("data:image/svg+xml,%3csvg aria-hidden='true' xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 16 12'%3e %3cpath stroke='lightgrey' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='M1 5.917 5.724 10.5 15 1.5'/%3e %3c/svg%3e") !important;
+}
+
+.checkbox-container input[type="checkbox"] + label {
+    @apply text-base font-normal;
+}
+
+/****** Toggles **********/
+
+.toggle-container > div:first-child {
+    @apply inline-flex w-full items-center justify-start gap-3 cursor-pointer;
+}
+
+.toggle-container.toggle-right > div:first-child {
+    @apply justify-between;
+}
+
+.toggle-container .label {
+    @apply text-base font-medium text-gray-900;
+}
+
+.toggle-container .description {
+    @apply text-sm text-grey-900 ml-14;
+}
+
+.toggle-container.toggle-right .description {
+    @apply ml-0;
+}
+
+.toggle-container .toggle-btn {
+    @apply relative w-11 h-6 rounded-full;
+}
+
+/****** Form Input CLASSES **********/
+
+.form-input,
+.form-textarea,
+.form-select {
+    @apply appearance-none bg-white border border-gray-400 rounded-md py-2 px-3 text-base leading-normal transition duration-150 ease-in-out focus:outline-none focus:ring focus:ring-opacity-30 focus:ring-wave-500 focus:border-wave-400;
+}
+
+.form-select {
+    background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='none'%3E%3Cpath d='M7 7l3-3 3 3m0 6l-3 3-3-3' stroke='%239fa6b2' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    background-position: right 0.5rem center;
+    background-size: 1.5em 1.5em;
+    padding: 0.5rem 2.5rem 0.5rem 0.75rem;
+    background-repeat: no-repeat;
+}
+
+.typing {
+    display: inline-block;
+    width: 0.8rem;
+    height: 0.8rem;
+    margin-right: 0rem;
+    box-sizing: border-box;
+    background: #ccc;
+    border-radius: 50%;
+
+    &.typing-1 {
+        animation: typing 2s infinite;
+    }
+    &.typing-2 {
+        animation: typing 2s 125ms infinite;
+    }
+    &.typing-3 {
+        animation: typing 2s 250ms infinite;
+    }
+}

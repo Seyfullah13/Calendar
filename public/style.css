@@ -1,0 +1,393 @@
+#calendar {
+    max-width: 98%;
+    max-height: 800px;
+    margin: 40px auto;
+}
+
+.custom-event-class {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border: 0px;
+    /*border-top: 5px solid; /* Style CSS pour la bordure gauche */
+    font-weight: bold;
+}
+
+/* CSS personnalisé */
+.event-hover {
+    position: absolute;
+    z-index: 999;
+    background-color: rgba(255, 255, 255, 0.9);
+    border: 1px solid #ccc;
+    padding: 10px;
+    max-width: 200px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    font-size: 14px;
+    line-height: 1.4;
+    text-align: center;
+}
+
+.fc-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.fc-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.fc-title img {
+    margin-left: auto;
+}
+
+a.fc-timeline-slot-cushion.fc-scrollgrid-sync-inner {
+    display: flex;
+    width: 100%;
+    justify-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+#eventModal {
+    /* Positionnement */
+    margin-top: 25px;
+    margin-left: 69%;
+    height: 1000%;
+    max-width: 400px; /* Largeur maximale du modal */
+    width: 100%; /* Largeur du modal */
+}
+
+#calendar {
+    margin-top: 7%;
+}
+
+.fc .fc-button-primary {
+    background-color: #d22b42;
+    border-color: #ffffff;
+    border-radius: 10px;
+}
+
+.fc .fc-button-primary:disabled {
+    background-color: #e17280;
+    border-color: #ffffff;
+}
+
+.fc .fc-button-primary:not(:disabled).fc-button-active,
+.fc .fc-button-primary:not(:disabled):active {
+    background-color: #951f2f;
+    border-color: #ffffff;
+}
+
+.hidden {
+    display: none;
+}
+
+.calendar-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid;
+}
+#emailInputValue {
+    margin-right: 50px;
+}
+.error {
+    color: red;
+    display: none;
+}
+
+.fc-datagrid-cell-main {
+    width: 200px; /* Définissez la largeur maximale de l'élément */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+#container .custom-event-class {
+    padding-top: 5px;
+    padding-bottom: 10px;
+    border: 0px;
+    border-top: 5px solid;
+    font-weight: bold;
+    white-space: nowrap;
+    /* Empêche le texte de se diviser sur plusieurs lignes */
+    overflow: hidden;
+    /* Cache le texte qui dépasse */
+    border-radius: 5px;
+    /* Arrondir les évènements */
+}
+
+.fc .fc-resource-timeline-divider {
+    width: 1px;
+}
+
+.fc .fc-scrollgrid,
+.fc .fc-scrollgrid table {
+    border-radius: 10px;
+}
+
+#calendar {
+    margin-top: 0;
+}
+
+#container .custom-event-class {
+    border-radius: 10px;
+}
+
+.fc-theme-standard td,
+.fc-theme-standard th {
+    height: 52px;
+}
+
+.fc-datagrid-cell-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: medium;
+    font-weight: 200;
+    padding-right: 10px;
+}
+
+.calendar-container table {
+    border-radius: 10px;
+}
+
+.fc .fc-datagrid-cell-cushion {
+    padding-top: 14px;
+}
+
+.fc .fc-scrollgrid-section-liquid > td {
+    border-bottom-right-radius: 10px;
+}
+
+.fc .fc-scrollgrid-section-footer > *,
+.fc .fc-scrollgrid-section-header > * {
+    border-top-right-radius: 10px;
+}
+
+.fc .fc-scrollgrid-section-footer > :first-child,
+.fc .fc-scrollgrid-section-header > :first-child {
+    border-top-right-radius: 0px;
+}
+
+.fc .fc-scrollgrid-section,
+.fc .fc-scrollgrid-section table,
+.fc .fc-scrollgrid-section > td {
+    border-bottom-left-radius: 10px;
+}
+
+.fc .fc-scrollgrid-section,
+.fc .fc-scrollgrid-section table,
+.fc .fc-scrollgrid-section > td:last-child {
+    border-bottom-left-radius: 0px;
+}
+
+.fc .fc-scrollgrid-section,
+.fc .fc-scrollgrid-section table,
+.fc .fc-scrollgrid-section > td:first-child {
+    border-bottom-right-radius: 0px;
+}
+
+.fc .fc-scrollgrid-section > th:last-child {
+    border-top-right-radius: 10px;
+}
+
+.fc-license-message {
+    display: none;
+}
+
+#emailInput {
+    width: calc(100% - 2rem);
+    /* Adjust the input width to occupy available space minus margins/padding */
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.fc-resourceTimelineTwoWeek-button,
+.fc-dayGridMonth-button {
+    display: none !important;
+}
+
+.fc-resourceTimelineThreeMonth-button {
+    display: none !important;
+}
+
+.fc-listWeek-button {
+    display: none !important;
+}
+
+.dropdown-content button {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    width: 100%;
+    border: none;
+    background: none;
+    text-align: left;
+}
+
+.dropdown-content button:hover {
+    background-color: #f1f1f1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+#selectDiv {
+    position: absolute;
+    right: 1vw;
+    width: 350px;
+    justify-content: end;
+}
+
+#resourceSelect {
+    width: 250px;
+}
+
+#timelineChoice {
+    width: 125px;
+}
+
+.fc-daygrid-day-top {
+    height: 70px;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 5vh;
+    left: 75.1vw;
+    min-width: 111px;
+    z-index: 99999;
+}
+
+.main-dropdown-button-content {
+    display: flex;
+    align-items: center;
+}
+
+.main-dropdown-button-content svg {
+    margin-left: 8px;
+}
+
+#phoneValue {
+    border: none;
+    background: none;
+    pointer-events: none;
+}
+
+#phoneSpan,
+#phoneInputContainer,
+#emailSpanStyle,
+#emailInputContainer {
+    width: 358px !important;
+    height: 49px !important;
+}
+
+#emailInputContainer {
+    margin: 3px;
+}
+
+#modalGuestName {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    text-align: left;
+    color: #111928;
+}
+
+#iconMessage {
+    color: #004f5c;
+}
+
+#labelInput {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 21px;
+    text-align: left;
+    color: #858585;
+}
+
+#buttonSidebar {
+    background-color: #2cb8c5;
+}
+
+.arrivalDeparture {
+    cursor: default;
+    width: 273px;
+    height: 37px;
+    gap: var(--2);
+    opacity: 0px;
+}
+
+#timeSlot,
+#timeSlotDep {
+    width: 70px;
+    padding: 5px;
+    font-size: 16px;
+}
+
+#validateButtonTime {
+    border-bottom-left-radius: 10px;
+}
+
+#cancelButtonTime {
+    border-bottom-right-radius: 10px;
+}
+
+#validateButtonTimeDep {
+    border-bottom-left-radius: 10px;
+}
+
+#cancelButtonTimeDep {
+    border-bottom-right-radius: 10px;
+}
+
+.fc .fc-toolbar-title {
+    margin-right: 139px;
+}
+
+.timeStyle {
+    position: absolute;
+    left: 323px;
+}
+
+.fc-daygrid-day-events {
+    margin-bottom: 10px;
+}
+
+#eventModal {
+    max-height: 90vh;
+    /* 80% de la hauteur de la fenêtre */
+
+    overflow: auto;
+
+    position: fixed;
+}
+
+#popover {
+    left: 250px;
+}
+
+#propertyImage {
+    border-radius: 10px;
+}
